@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <title>Leaflet map</title>
+  <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 .mySlides {display:none}
@@ -21,7 +26,37 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
   <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
   <a href="#contact" class="w3-bar-item w3-button w3-mobile">FAQ</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">Reviews</a>
   <a href="#contact" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Book Now</a>
+
+
+<div class="w3-display-topleft w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('').style.display='block'" class="w3-button w3-black">contact</button></p>
+</div>
+
+<!-- Book Now Modal -->
+<div id="Book Now" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Contact</h1>
+    </div>
+    <div class="w3-container">
+      <p>Reserve a table, ask for today's special or just send us a message:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
 </div>
 <!-- Header -->
 <header class="w3-display-container w3-content" style="max-width:1532px;">
@@ -217,66 +252,58 @@ function showDivs(n) {
     <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
   </div>
 
+ 
 
 <!--MAP.   position: relative; -->
 
-  <div id="map" class="map map-home leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="height: 300px; margin-top: 50px; outline: none;" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
-    <div class="leaflet-pane leaflet-tile-pane">
-      <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
-        <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 14; transform: translate3d(340px, 124px, 0px) scale(0.0625);">
-        </div>
-        <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
-          <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/11/1023/680.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(342px, -131px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/11/1023/681.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(342px, 125px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/11/1022/680.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(86px, -131px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/11/1024/680.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(598px, -131px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/11/1022/681.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(86px, 125px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/11/1024/681.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(598px, 125px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/11/1021/680.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-170px, -131px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/11/1025/680.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(854px, -131px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/11/1021/681.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-170px, 125px, 0px); opacity: 1;">
-          <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/11/1025/681.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(854px, 125px, 0px); opacity: 1;">
-        </div>
-      </div>
-    </div>
-    <div class="leaflet-pane leaflet-shadow-pane">
-      <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(366px, 136px, 0px);">
-    </div>
-    <div class="leaflet-pane leaflet-overlay-pane">
-    </div>
-    <div class="leaflet-pane leaflet-marker-pane">
-      <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(366px, 136px, 0px); z-index: 136;">
-    </div>
-    <div class="leaflet-pane leaflet-tooltip-pane">
-    </div>
-    <div class="leaflet-pane leaflet-popup-pane">
-    </div>
-    <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(261977px, 174361px, 0px) scale(1024);">
-    </div>
-  </div>
-  <div class="leaflet-control-container">
-    <div class="leaflet-top leaflet-left">
-      <div class="leaflet-control-zoom leaflet-bar leaflet-control">
-        <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a>
-          <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a>
-          </div>
-        </div>
-        <div class="leaflet-top leaflet-right">
-        </div>
-        <div class="leaflet-bottom leaflet-left">
-        </div>
-        <div class="leaflet-bottom leaflet-right">
-          <div class="leaflet-control-attribution leaflet-control">
-            <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors
-          </div>
-        </div>
-      </div>
-    </div>
+  <div id = "map" style = "w3-center; width: 900px; height: 380px"></div>
+      <script>
+         // Creating map options
+         var mapOptions = {
+            center: [17.385044, 78.486671],
+            zoom: 10
+         }
+         
+         // Creating a map object
+         var map = new L.map('map', mapOptions);
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         
+         // Adding layer to the map
+         map.addLayer(layer);
+
+         // Creating a marker
+         var marker = L.marker([17.385044, 78.486671]);
+         
+         // Adding marker to the map
+         marker.addTo(map);
+
+         // Creating latlng object
+         var latlngs = [
+            [17.385044, 78.486671],
+            [16.506174, 80.648015],
+            [17.000538, 81.804034],
+            [17.686816, 83.218482]
+         ];
+         // Creating a poly line
+         var polyline = L.polyline(latlngs, {color: 'red'});
+         
+         // Adding to poly line to map
+         polyline.addTo(map);
+
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         map.addLayer(layer); // Adding layer to the map
+         var scale = L.control.scale(); // Creating scale control
+         scale.addTo(map); // Adding scale control to the map
+      </script>
 
 
   
         
-
+<!--Subscribtion-->
+<!--
   <div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off" style="margin:32px 0;">
     <h2>Get the best offers first!</h2>
     <p>Join our newsletter.</p>
@@ -284,6 +311,7 @@ function showDivs(n) {
     <input class="w3-input w3-border" type="text" placeholder="Your Email address">
     <button type="button" class="w3-button w3-red w3-margin-top">Subscribe</button>
   </div>
+  -->
 
   <div class="w3-container" id="contact">
     <h2>Contact</h2>
@@ -298,6 +326,10 @@ function showDivs(n) {
       <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
     </form>
   </div>
+
+
+
+
 
 <!-- End page content -->
 </div>
